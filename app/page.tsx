@@ -437,7 +437,7 @@ export default function Home() {
           <CardDescription className="text-gray-300">Perfect for small offices and startups</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow">
-          <div className="text-2xl font-bold text-white mb-4">30 packets/month</div>
+          <div className="text-2xl font-bold text-white mb-4">40 packets/month</div>
           <ul className="space-y-3 text-white">
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
