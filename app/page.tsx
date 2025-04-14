@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
+      <header className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center hidden md:flex">
         <div className="flex flex-col md:flex-row gap-4 items-center mb-4 md:mb-0">
           <div className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-red-500" />
@@ -57,7 +57,7 @@ export default function Home() {
             <Coffee className="h-6 w-6 text-red-500" />
             <span className="text-xl font-bold">Ceylon Cafe Vending</span>
           </div>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="hidden md:flex flex-wrap justify-center gap-6">
             <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
               Benefits
             </a>
