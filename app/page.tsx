@@ -1,3 +1,4 @@
+import { Menu } from "lucide-react";
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -51,31 +52,41 @@ export default function Home() {
       </header>
 
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-        <div className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <Coffee className="h-6 w-6 text-red-500" />
-            <span className="text-xl font-bold">Ceylon Cafe Vending</span>
-          </div>
-          <div className="hidden md:flex flex-wrap justify-center gap-6">
-            <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
-              Benefits
-            </a>
-            <a href="#machines" className="text-sm hover:text-red-500 transition-colors">
-              Machines
-            </a>
-            <a href="#premix" className="text-sm hover:text-red-500 transition-colors">
-              Premix
-            </a>
-            <a href="#plans" className="text-sm hover:text-red-500 transition-colors">
-              Plans
-            </a>
-            <a href="#contact" className="text-sm hover:text-red-500 transition-colors">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+<nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+  <div className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
+    {/* Logo and title - aligned left on mobile, normal on desktop */}
+    <div className="flex items-center gap-2 w-full md:w-auto justify-start">
+      <Coffee className="h-6 w-6 text-red-500" />
+      <span className="text-xl font-bold">Ceylon Cafe Vending</span>
+    </div>
+    
+    {/* Navigation links - hidden on mobile, shown on desktop */}
+    <div className="hidden md:flex flex-wrap justify-center gap-6">
+      <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
+        Benefits
+      </a>
+      <a href="#machines" className="text-sm hover:text-red-500 transition-colors">
+        Machines
+      </a>
+      <a href="#premix" className="text-sm hover:text-red-500 transition-colors">
+        Premix
+      </a>
+      <a href="#plans" className="text-sm hover:text-red-500 transition-colors">
+        Plans
+      </a>
+      <a href="#contact" className="text-sm hover:text-red-500 transition-colors">
+        Contact
+      </a>
+    </div>
+    
+    {/* Mobile menu button (optional) */}
+    <button className="md:hidden absolute right-4 top-4 text-gray-300 hover:text-white">
+      <Menu className="h-6 w-6" />
+    </button>
+  </div>
+  
+  {/* Mobile menu items (optional) - would go here */}
+</nav>
 
    {/* Hero Section */}
 <section className="relative py-12 md:py-24 overflow-hidden bg-gray-950">
