@@ -1,7 +1,8 @@
-"use client"; // Add this directive at the top
+"use client";
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,94 +30,155 @@ import {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const navLinks = [
+    { href: "#benefits", label: "Benefits" },
+    { href: "#machines", label: "Machines" },
+    { href: "#premix", label: "Premix" },
+    { href: "#plans", label: "Plans" },
+    { href: "#contact", label: "Contact" }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center hidden md:flex">
-        {/* ... (your header content remains the same) */}
-      </header>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-        <div className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and title */}
-          <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-start">
+      {/* Top Contact Bar */}
+      <header className="bg-black/80 hidden md:block">
+        <div className="container mx-auto py-2 px-4 md:px-6 flex justify-between items-center text-sm">
+          <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Coffee className="h-6 w-6 text-red-500" />
-              <span className="text-xl font-bold">Ceylon Cafe Vending</span>
+              <Phone className="h-4 w-4 text-red-500" />
+              <span>072 3333 015</span>
             </div>
-            
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden text-gray-300 hover:text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4 text-red-500" />
+              <span>ceyloncafevending@gmail.com</span>
+            </div>
           </div>
-          
-          {/* Desktop navigation links */}
-          <div className="hidden md:flex gap-6">
-            <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
-              Benefits
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-red-500 transition-colors">
+              <Facebook className="h-5 w-5" />
             </a>
-            <a href="#machines" className="text-sm hover:text-red-500 transition-colors">
-              Machines
+            <a href="#" className="hover:text-red-500 transition-colors">
+              <Instagram className="h-5 w-5" />
             </a>
-            <a href="#premix" className="text-sm hover:text-red-500 transition-colors">
-              Premix
-            </a>
-            <a href="#plans" className="text-sm hover:text-red-500 transition-colors">
-              Plans
-            </a>
-            <a href="#contact" className="text-sm hover:text-red-500 transition-colors">
-              Contact
+            <a href="#" className="hover:text-red-500 transition-colors">
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
-        
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-black/95 py-4 px-6 border-t border-gray-800">
-            <div className="flex flex-col gap-4">
-              <a 
-                href="#benefits" 
-                className="text-white hover:text-red-500 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Benefits
-              </a>
-              <a 
-                href="#machines" 
-                className="text-white hover:text-red-500 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Machines
-              </a>
-              <a 
-                href="#premix" 
-                className="text-white hover:text-red-500 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Premix
-              </a>
-              <a 
-                href="#plans" 
-                className="text-white hover:text-red-500 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Plans
-              </a>
-              <a 
-                href="#contact" 
-                className="text-white hover:text-red-500 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
-            </div>
+      </header>
+
+      {/* Main Navigation */}
+      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <motion.div 
+              className="flex items-center gap-2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Coffee className="h-6 w-6 text-red-500" />
+              <span className="text-xl font-bold">Ceylon Cafe Vending</span>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <motion.div 
+              className="hidden md:flex items-center gap-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium hover:text-red-500 transition-colors relative group"
+                >
+                  {link.label}
+                  <motion.span 
+                    className="absolute left-0 bottom-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                  />
+                </a>
+              ))}
+            </motion.div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="md:hidden p-2 text-gray-300 hover:text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              {mobileMenuOpen ? (
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 180 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <X className="h-6 w-6" />
+                </motion.div>
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </motion.button>
           </div>
-        )}
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{
+                  height: "auto",
+                  opacity: 1,
+                  transition: {
+                    height: { duration: 0.3 },
+                    opacity: { duration: 0.2, delay: 0.1 }
+                  }
+                }}
+                exit={{
+                  height: 0,
+                  opacity: 0,
+                  transition: {
+                    height: { duration: 0.3 },
+                    opacity: { duration: 0.1 }
+                  }
+                }}
+                className="md:hidden bg-black/95 overflow-hidden"
+              >
+                <div className="flex flex-col gap-2 py-4">
+                  {navLinks.map((link, index) => (
+                    <motion.a
+                      key={link.href}
+                      href={link.href}
+                      className="px-4 py-3 text-white hover:text-red-500 hover:bg-white/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{
+                        x: 0,
+                        opacity: 1,
+                        transition: {
+                          x: { type: "spring", stiffness: 300, damping: 24 },
+                          opacity: { duration: 0.3 },
+                          delay: index * 0.05
+                        }
+                      }}
+                      exit={{ x: -20, opacity: 0 }}
+                    >
+                      {link.label}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </nav>
 
    {/* Hero Section */}
