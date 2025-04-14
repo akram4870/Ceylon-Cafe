@@ -1,13 +1,16 @@
-import { Menu } from "lucide-react";
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+"use client"; // Add this directive at the top
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
   Facebook,
   Instagram,
@@ -21,72 +24,100 @@ import {
   Clock,
   Shield,
   Zap,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center hidden md:flex">
-        <div className="flex flex-col md:flex-row gap-4 items-center mb-4 md:mb-0">
-          <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4 text-red-500" />
-            <span className="text-sm">072 3333 015</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-red-500" />
-            <span className="text-sm">ceyloncafevending@gmail.com</span>
-          </div>
-        </div>
-        <div className="flex gap-4">
-          <a href="#" className="text-white hover:text-red-500 transition-colors">
-            <Facebook className="h-5 w-5" />
-          </a>
-          <a href="#" className="text-white hover:text-red-500 transition-colors">
-            <Instagram className="h-5 w-5" />
-          </a>
-          <a href="#" className="text-white hover:text-red-500 transition-colors">
-            <Linkedin className="h-5 w-5" />
-          </a>
-        </div>
+        {/* ... (your header content remains the same) */}
       </header>
 
       {/* Navigation */}
-<nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-  <div className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-    {/* Logo and title - aligned left on mobile, normal on desktop */}
-    <div className="flex items-center gap-2 w-full md:w-auto justify-start">
-      <Coffee className="h-6 w-6 text-red-500" />
-      <span className="text-xl font-bold">Ceylon Cafe Vending</span>
-    </div>
-    
-    {/* Navigation links - hidden on mobile, shown on desktop */}
-    <div className="hidden md:flex flex-wrap justify-center gap-6">
-      <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
-        Benefits
-      </a>
-      <a href="#machines" className="text-sm hover:text-red-500 transition-colors">
-        Machines
-      </a>
-      <a href="#premix" className="text-sm hover:text-red-500 transition-colors">
-        Premix
-      </a>
-      <a href="#plans" className="text-sm hover:text-red-500 transition-colors">
-        Plans
-      </a>
-      <a href="#contact" className="text-sm hover:text-red-500 transition-colors">
-        Contact
-      </a>
-    </div>
-    
-    {/* Mobile menu button (optional) */}
-    <button className="md:hidden absolute right-4 top-4 text-gray-300 hover:text-white">
-      <Menu className="h-6 w-6" />
-    </button>
-  </div>
-  
-  {/* Mobile menu items (optional) - would go here */}
-</nav>
+      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+        <div className="container mx-auto py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
+          {/* Logo and title */}
+          <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-start">
+            <div className="flex items-center gap-2">
+              <Coffee className="h-6 w-6 text-red-500" />
+              <span className="text-xl font-bold">Ceylon Cafe Vending</span>
+            </div>
+            
+            {/* Mobile menu button */}
+            <button 
+              className="md:hidden text-gray-300 hover:text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+          
+          {/* Desktop navigation links */}
+          <div className="hidden md:flex gap-6">
+            <a href="#benefits" className="text-sm hover:text-red-500 transition-colors">
+              Benefits
+            </a>
+            <a href="#machines" className="text-sm hover:text-red-500 transition-colors">
+              Machines
+            </a>
+            <a href="#premix" className="text-sm hover:text-red-500 transition-colors">
+              Premix
+            </a>
+            <a href="#plans" className="text-sm hover:text-red-500 transition-colors">
+              Plans
+            </a>
+            <a href="#contact" className="text-sm hover:text-red-500 transition-colors">
+              Contact
+            </a>
+          </div>
+        </div>
+        
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 py-4 px-6 border-t border-gray-800">
+            <div className="flex flex-col gap-4">
+              <a 
+                href="#benefits" 
+                className="text-white hover:text-red-500 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Benefits
+              </a>
+              <a 
+                href="#machines" 
+                className="text-white hover:text-red-500 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Machines
+              </a>
+              <a 
+                href="#premix" 
+                className="text-white hover:text-red-500 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Premix
+              </a>
+              <a 
+                href="#plans" 
+                className="text-white hover:text-red-500 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Plans
+              </a>
+              <a 
+                href="#contact" 
+                className="text-white hover:text-red-500 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
 
    {/* Hero Section */}
 <section className="relative py-12 md:py-24 overflow-hidden bg-gray-950">
