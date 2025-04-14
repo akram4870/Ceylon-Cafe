@@ -78,113 +78,115 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-black/70 z-10"></div>
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-40"></div>
-        <div className="container mx-auto px-4 md:px-6 relative z-20">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">FREE Coffee Machines for Your Business</h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Ceylon Cafe Vending offers subscription-based coffee vending solutions with no upfront costs. Get premium
-              Nestlé coffee for your workplace with our hassle-free service.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
-                Get Your Free Machine
-              </Button>
-              <Button size="lg" variant="outline" className="border-red-600 text-white hover:bg-red-600/20 font-medium">
-                View Plans
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="relative py-20 md:py-32 overflow-hidden" style={{
+  backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
+}}>
+  <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <div className="max-w-3xl">
+      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">FREE Coffee Machines for Your Business</h1>
+      <p className="text-xl md:text-2xl mb-8 text-gray-300">
+        Ceylon Cafe Vending offers subscription-based coffee vending solutions with no upfront costs. Get premium
+        Nestlé coffee for your workplace with our hassle-free service.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+          Get Your Free Machine
+        </Button>
+        <Button size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600/20 hover:text-white font-medium">
+          View Plans
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-16 md:py-24 bg-black">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Ceylon Cafe Vending</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We provide comprehensive coffee solutions that make your workplace better without any hassle.
-            </p>
+<section id="benefits" className="py-16 md:py-24 bg-black">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Ceylon Cafe Vending</h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        We provide comprehensive coffee solutions that make your workplace better without any hassle.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Coffee className="h-6 w-6 text-red-500" />
           </div>
+          <CardTitle className="text-white">FREE Coffee Machines</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">No upfront investment required for premium coffee machines.</p>
+        </CardContent>
+      </Card>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Coffee className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">FREE Coffee Machines</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">No upfront investment required for premium coffee machines.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Settings className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">Full Maintenance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Complete servicing and maintenance included in all subscriptions.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">Fast Setup</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Machines delivered and installed within 48 hours of approval.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Star className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">Premium Quality</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Nestlé coffee and tea premix options for superior taste.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">Zero Downtime</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Responsive support ensures your coffee is always available.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-red-500" />
-                </div>
-                <CardTitle className="text-white">Flexible Plans</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Subscription options to fit businesses of all sizes.</p>
-              </CardContent>
-            </Card>
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Settings className="h-6 w-6 text-red-500" />
           </div>
-        </div>
-      </section>
+          <CardTitle className="text-white">Full Maintenance</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">Complete servicing and maintenance included in all subscriptions.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Clock className="h-6 w-6 text-red-500" />
+          </div>
+          <CardTitle className="text-white">Fast Setup</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">Machines delivered and installed within 48 hours of approval.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Star className="h-6 w-6 text-red-500" />
+          </div>
+          <CardTitle className="text-white">Premium Quality</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">Nestlé coffee and tea premix options for superior taste.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Shield className="h-6 w-6 text-red-500" />
+          </div>
+          <CardTitle className="text-white">Zero Downtime</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">Responsive support ensures your coffee is always available.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
+        <CardHeader className="pb-2">
+          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+            <Zap className="h-6 w-6 text-red-500" />
+          </div>
+          <CardTitle className="text-white">Flexible Plans</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-300">Subscription options to fit businesses of all sizes.</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
 
       {/* Machines Section */}
       <section id="machines" className="py-16 md:py-24 bg-gray-950">
@@ -204,7 +206,7 @@ export default function Home() {
                   src="/images/spectra.png"
                   alt="Spectra Double Option Coffee Machine"
                   fill
-                  className="object-contain p-8"
+                  className="object-cover p-0"
                 />
               </div>
               <CardHeader>
@@ -233,7 +235,7 @@ export default function Home() {
 
             <Card className="bg-gray-900 border-gray-800 overflow-hidden">
               <div className="aspect-square relative bg-black">
-                <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-contain p-8" />
+                <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
               </div>
               <CardHeader>
                 <CardTitle className="text-white">Multi Option Machine</CardTitle>
@@ -263,137 +265,159 @@ export default function Home() {
       </section>
 
       {/* Premix Section */}
-      <section id="premix" className="py-16 md:py-24 bg-black">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Premium Coffee & Tea Premix</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our range of high-quality coffee and tea premix options from Nestlé
+<section id="premix" className="py-16 md:py-24 bg-black">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Premium Coffee & Tea Premix</h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Explore our range of high-quality coffee and tea premix options from Nestlé
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+          <Image 
+            src="/images/nescafe.png" 
+            alt="Nescafe Premix" 
+            fill 
+            className="object-cover p-0" 
+          />
+        </div>
+        <CardHeader className="pb-2 border-t border-gray-800">
+          <div className="flex justify-between items-start">
+            <CardTitle className="text-white text-xl">Nescafe Premix</CardTitle>
+            <Badge className="bg-red-600 text-white font-bold ">Best</Badge>
+          </div>
+          <CardDescription className="text-gray-300">Premium coffee premix</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center py-1">
+            <span className="text-gray-300">1kg</span>
+            <span className="font-bold text-2xl text-red-500">Rs 2600</span>
+          </div>
+          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+            <span className="text-gray-300">Makes</span>
+            <span className="text-white font-medium">50 Cups</span>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+          <Image src="/images/nestea.png" alt="Nestea Premix" fill className="object-cover p-0" />
+        </div>
+        <CardHeader className="pb-2 border-t border-gray-800">
+          <div className="flex justify-between items-start">
+            <CardTitle className="text-white text-xl">Nestea Premix</CardTitle>
+            <Badge className="bg-red-600 text-white font-bold">Popular</Badge>
+          </div>
+          <CardDescription className="text-gray-300">Premium tea premix</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center py-1">
+            <span className="text-gray-300">1kg</span>
+            <span className="font-bold text-2xl text-red-500">Rs 2600</span>
+          </div>
+          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+            <span className="text-gray-300">Makes</span>
+            <span className="text-white font-medium">50 Cups</span>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+          <Image src="/images/cardamon-tea.png" alt="Cardamon Tea" fill className="object-cover p-0" />
+        </div>
+        <CardHeader className="pb-2 border-t border-gray-800">
+          <div className="flex justify-between items-start">
+            <CardTitle className="text-white text-xl">Cardamon Tea</CardTitle>
+            <Badge className="bg-green-600 text-white font-bold">New</Badge>
+          </div>
+          <CardDescription className="text-gray-300">Aromatic cardamon tea premix</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center py-1">
+            <span className="text-gray-300">1kg</span>
+            <span className="font-bold text-2xl text-red-500">Rs 3470</span>
+          </div>
+          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+            <span className="text-gray-300">Makes</span>
+            <span className="text-white font-medium">50 Cups</span>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+          <Image src="/images/milo1.png" alt="Milo Premix" fill className="object-cover p-0" />
+        </div>
+        <CardHeader className="pb-2 border-t border-gray-800">
+          <div className="flex justify-between items-start">
+            <CardTitle className="text-white text-xl">Milo Premix</CardTitle>
+            <Badge className="bg-orange-600 text-white font-bold">Hot</Badge>
+          </div>
+          <CardDescription className="text-gray-300">Chocolate malt beverage</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center py-1">
+            <span className="text-gray-300">800g</span>
+            <span className="font-bold text-2xl text-red-500">Rs 2690</span>
+          </div>
+          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+            <span className="text-gray-300">Makes</span>
+            <span className="text-white font-medium">30 Cups</span>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+          <Image src="/images/nesto1.png" alt="Nestomalt" fill className="object-cover p-0" />
+        </div>
+        <CardHeader className="pb-2 border-t border-gray-800">
+          <div className="flex justify-between items-start">
+            <CardTitle className="text-white text-xl">Nestomalt</CardTitle>
+            <Badge className="bg-gray-600 text-white font-bold">Classic</Badge>
+          </div>
+          <CardDescription className="text-gray-300">Malted food drink</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center py-1">
+            <span className="text-gray-300">800g</span>
+            <span className="font-bold text-2xl text-red-500">Rs 2100</span>
+          </div>
+          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+            <span className="text-gray-300">Makes</span>
+            <span className="text-white font-medium">30 Cups</span>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    <div className="mt-12 bg-gray-900 rounded-lg overflow-hidden">
+      <div className="p-6 border-l-4 border-red-600 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex items-center mb-4 md:mb-0">
+            <div className="mr-4 bg-red-600/20 p-3 rounded-full">
+              <Coffee className="h-6 w-6 text-red-500" />
+            </div>
+            <p className="text-white font-medium">
+              Nescafe paper cups available for purchase
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/nescafe.png" alt="Nescafe Premix" fill className="object-contain p-4" />
-              </div>
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-white">Nescafe Premix</CardTitle>
-                  <Badge className="bg-red-600">Best Seller</Badge>
-                </div>
-                <CardDescription className="text-gray-300">Premium coffee premix</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">1kg</span>
-                  <span className="font-bold text-white">Rs 2600</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Makes</span>
-                  <span className="text-white">50 Cups</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/nestea.png" alt="Nestea Premix" fill className="object-contain p-4" />
-              </div>
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-white">Nestea Premix</CardTitle>
-                  <Badge className="bg-red-600">Popular</Badge>
-                </div>
-                <CardDescription className="text-gray-300">Premium tea premix</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">1kg</span>
-                  <span className="font-bold text-white">Rs 2600</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Makes</span>
-                  <span className="text-white">50 Cups</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/cardamon-tea.png" alt="Cardamon Tea" fill className="object-contain p-4" />
-              </div>
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-white">Cardamon Tea</CardTitle>
-                  <Badge className="bg-green-600">New</Badge>
-                </div>
-                <CardDescription className="text-gray-300">Aromatic cardamon tea premix</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">1kg</span>
-                  <span className="font-bold text-white">Rs 3470</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Makes</span>
-                  <span className="text-white">50 Cups</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/milo.png" alt="Milo Premix" fill className="object-contain p-4" />
-              </div>
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-white">Milo Premix</CardTitle>
-                  <Badge className="bg-orange-600">Hot</Badge>
-                </div>
-                <CardDescription className="text-gray-300">Chocolate malt beverage</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">800g</span>
-                  <span className="font-bold text-white">Rs 2690</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Makes</span>
-                  <span className="text-white">30 Cups</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/nestomalt.png" alt="Nestomalt" fill className="object-contain p-4" />
-              </div>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-white">Nestomalt</CardTitle>
-                <CardDescription className="text-gray-300">Malted food drink</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">800g</span>
-                  <span className="font-bold text-white">Rs 2100</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Makes</span>
-                  <span className="text-white">30 Cups</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-12 p-6 bg-gray-900 rounded-lg max-w-3xl mx-auto">
-            <p className="text-center text-white">
-              Nescafe paper cups available for purchase. One bundle is Rs 260 and contains 55 Cups with Nescafe
-              branding.
-            </p>
+          <div className="flex items-center">
+            <span className="mr-3 text-gray-300">One bundle: </span>
+            <span className="text-xl font-bold text-white">Rs 260</span>
+            <span className="mx-2 text-gray-400">•</span>
+            <span className="text-gray-300">Contains 55 Cups with Nescafe branding</span>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Plans Section */}
       <section id="plans" className="py-16 md:py-24 bg-gray-950">
