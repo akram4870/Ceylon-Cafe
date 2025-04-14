@@ -226,84 +226,82 @@ export default function Home() {
 <section id="benefits" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Ceylon Cafe Vending</h2>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+      <motion.h2 
+        className="text-3xl md:text-4xl font-bold mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Why Choose Ceylon Cafe Vending
+      </motion.h2>
+      <motion.p 
+        className="text-xl text-gray-300 max-w-3xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         We provide comprehensive coffee solutions that make your workplace better without any hassle.
-      </p>
+      </motion.p>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Coffee className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">FREE Coffee Machines</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">No upfront investment required for premium coffee machines.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Settings className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">Full Maintenance</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">Complete servicing and maintenance included in all subscriptions.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Clock className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">Fast Setup</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">Machines delivered and installed within 48 hours of approval.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Star className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">Premium Quality</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">Nestlé coffee and tea premix options for superior taste.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Shield className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">Zero Downtime</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">Responsive support ensures your coffee is always available.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gray-900 border-gray-800 transition-all duration-300 hover:border-red-600 hover:border-2">
-        <CardHeader className="pb-2">
-          <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
-            <Zap className="h-6 w-6 text-red-500" />
-          </div>
-          <CardTitle className="text-white">Flexible Plans</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-300">Subscription options to fit businesses of all sizes.</p>
-        </CardContent>
-      </Card>
+      {[
+        {
+          icon: <Coffee className="h-6 w-6 text-red-500" />,
+          title: "FREE Coffee Machines",
+          description: "No upfront investment required for premium coffee machines."
+        },
+        {
+          icon: <Settings className="h-6 w-6 text-red-500" />,
+          title: "Full Maintenance",
+          description: "Complete servicing and maintenance included in all subscriptions."
+        },
+        {
+          icon: <Clock className="h-6 w-6 text-red-500" />,
+          title: "Fast Setup",
+          description: "Machines delivered and installed within 48 hours of approval."
+        },
+        {
+          icon: <Star className="h-6 w-6 text-red-500" />,
+          title: "Premium Quality",
+          description: "Nestlé coffee and tea premix options for superior taste."
+        },
+        {
+          icon: <Shield className="h-6 w-6 text-red-500" />,
+          title: "Zero Downtime",
+          description: "Responsive support ensures your coffee is always available."
+        },
+        {
+          icon: <Zap className="h-6 w-6 text-red-500" />,
+          title: "Flexible Plans",
+          description: "Subscription options to fit businesses of all sizes."
+        }
+      ].map((benefit, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <Card className="bg-gray-900 border border-red-600 md:border-gray-800 transition-all duration-300 md:hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+            <CardHeader className="pb-2">
+              <motion.div 
+                className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4"
+                whileHover={{ scale: 1.05 }}
+              >
+                {benefit.icon}
+              </motion.div>
+              <CardTitle className="text-white">{benefit.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300">{benefit.description}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
     </div>
   </div>
 </section>
