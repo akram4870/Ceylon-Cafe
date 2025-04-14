@@ -420,147 +420,141 @@ export default function Home() {
 </section>
 
       {/* Plans Section */}
-      <section id="plans" className="py-16 md:py-24 bg-gray-950">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Flexible Subscription Plans</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose the perfect plan for your business needs. All plans include free machines and maintenance.
-            </p>
-          </div>
+<section id="plans" className="py-16 md:py-24 bg-gray-950">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Flexible Subscription Plans</h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Choose the perfect plan for your business needs. All plans include free machines and maintenance.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-gray-900 border-gray-800 flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white">Starter Plan</CardTitle>
-                <CardDescription className="text-gray-300">Perfect for small offices and startups</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3 text-white">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>40 packets/month</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Free machine with Rs. 25,000 Refundable deposit</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Monthly commitment: 30 packets/month</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>FREE servicing & maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Scheduled monthly refills</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Billed monthly</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-red-600 hover:bg-red-700">Get Started</Button>
-              </CardFooter>
-            </Card>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-8xl mx-auto">
+      {/* Starter Plan */}
+      <Card className="bg-gray-900 border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
+        <CardHeader>
+          <CardTitle className="text-white">Starter Plan</CardTitle>
+          <CardDescription className="text-gray-300">Perfect for small offices and startups</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <div className="text-2xl font-bold text-white mb-4">30 packets/month</div>
+          <ul className="space-y-3 text-white">
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Free machine with Rs. 25,000 Refundable deposit</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Monthly commitment: 30 packets/month</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>FREE servicing & maintenance</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Scheduled monthly refills</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Billed monthly</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-gray-800 hover:bg-gray-700">Get Started</Button>
+        </CardFooter>
+      </Card>
 
-            <Card className="bg-gray-900 border-gray-800 flex flex-col relative">
-              <div className="absolute top-0 right-0 left-0">
-                <div className="bg-red-600 text-white text-center py-1 text-sm font-medium">POPULAR</div>
-              </div>
-              <CardHeader className="pt-8">
-                <CardTitle className="text-white">SME Solution</CardTitle>
-                <CardDescription className="text-gray-300">Ideal for growing businesses</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3 text-white">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>60-100 packets/month</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>FREE coffee machine</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>No machine deposit</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Monthly commitment: 60-100 packets (3,000-5,000 cups/month)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Scheduled monthly refills</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>FREE servicing & maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Billed monthly or yearly</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-red-600 hover:bg-red-700">Most Popular</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white">Heavy Factory/Industrial</CardTitle>
-                <CardDescription className="text-gray-300">For large organizations with high demand</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3 text-white">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>100+ packets/month</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>FREE additional coffee machines based on demand</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>No machine deposit</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Monthly commitment: 100+ packets (5,000+ cups/month)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Exclusive discounts for loyal customers</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Scheduled monthly refills</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>FREE servicing & maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>Billed monthly or yearly</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-red-600 hover:bg-red-700">Enterprise Solution</Button>
-              </CardFooter>
-            </Card>
-          </div>
+      {/* SME Solution - Highlighted */}
+      <Card className="bg-gray-900 border-red-600 flex flex-col relative">
+        <div className="absolute top-0 right-0 left-0">
+          <div className="bg-red-600 text-white text-center py-1 text-sm font-medium">POPULAR</div>
         </div>
-      </section>
+        <CardHeader className="pt-8">
+          <CardTitle className="text-white">SME Solution</CardTitle>
+          <CardDescription className="text-gray-300">Ideal for growing businesses</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <div className="text-2xl font-bold text-white mb-4">40-100 packets/month</div>
+          <ul className="space-y-3 text-white">
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>FREE coffee machine</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>No machine deposit</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Monthly commitment: 40-100 packets (2,000-5,000 cups/month)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Scheduled monthly refills</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>FREE servicing & maintenance</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Billed monthly or yearly</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-red-600 hover:bg-red-700">Most Popular</Button>
+        </CardFooter>
+      </Card>
+
+      {/* Heavy Factory/Industrial */}
+      <Card className="bg-gray-900 border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
+        <CardHeader>
+          <CardTitle className="text-white">Heavy Factory/Industrial Solution</CardTitle>
+          <CardDescription className="text-gray-300">For large organizations with high demand</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <div className="text-2xl font-bold text-white mb-4">100+ packets/month</div>
+          <ul className="space-y-3 text-white">
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>FREE additional coffee machines based on demand</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>No machine deposit</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Monthly commitment: 100+ packets (5,000+ cups/month)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Exclusive discounts for loyal customers</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Scheduled monthly refills</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>FREE servicing & maintenance</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <span>Billed monthly or yearly</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-gray-800 hover:bg-gray-700">Enterprise Solution</Button>
+        </CardFooter>
+      </Card>
+    </div>
+  </div>
+</section>
 
       {/* How It Works Section */}
       <section className="py-16 md:py-24 bg-black">
