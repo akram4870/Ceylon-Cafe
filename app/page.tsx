@@ -445,7 +445,7 @@ export default function Home() {
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-              <span>Monthly commitment: 30 packets/month</span>
+              <span>Monthly commitment: 40 packets/month</span>
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -476,7 +476,7 @@ export default function Home() {
           <CardDescription className="text-gray-300">Ideal for growing businesses</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow">
-          <div className="text-2xl font-bold text-white mb-4">40-100 packets/month</div>
+          <div className="text-2xl font-bold text-white mb-4">60-100 packets/month</div>
           <ul className="space-y-3 text-white">
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -488,7 +488,7 @@ export default function Home() {
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-              <span>Monthly commitment: 40-100 packets (2,000-5,000 cups/month)</span>
+              <span>Monthly commitment: 40-100 packets (3,000-5,000 cups/month)</span>
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
