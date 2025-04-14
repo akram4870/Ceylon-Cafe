@@ -77,14 +77,12 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-<section className="relative py-20 md:py-32 overflow-hidden" style={{
-  backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80)',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center'
-}}>
-  <div className="container mx-auto px-4 md:px-6 relative z-10">
-    <div className="max-w-3xl">
+   {/* Hero Section */}
+<section className="relative py-12 md:py-24 overflow-hidden bg-gray-950">
+  {/* Container with flex layout */}
+  <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+    {/* Text content - left side */}
+    <div className="w-full md:w-1/2 relative z-10">
       <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">FREE Coffee Machines for Your Business</h1>
       <p className="text-xl md:text-2xl mb-8 text-gray-300">
         Ceylon Cafe Vending offers subscription-based coffee vending solutions with no upfront costs. Get premium
@@ -98,6 +96,24 @@ export default function Home() {
           View Plans
         </Button>
       </div>
+    </div>
+
+    {/* Image - right side on desktop, hidden on mobile */}
+    <div className="hidden md:block md:w-1/2 relative">
+      <img 
+        src="/images/ness.png" 
+        alt="Coffee machine illustration"
+        className="w-full h-auto rounded-lg shadow-xl"
+      />
+    </div>
+
+    {/* Image - shown only on mobile (below content) */}
+    <div className="md:hidden w-full mt-8">
+      <img 
+        src="/images/ness.png" 
+        alt="Coffee machine illustration"
+        className="w-full h-auto rounded-lg shadow-xl"
+      />
     </div>
   </div>
 </section>
@@ -199,7 +215,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="bg-gray-900 border-gray-800 overflow-hidden">
               <div className="aspect-square relative bg-black">
                 <Image
