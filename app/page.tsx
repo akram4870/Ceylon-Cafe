@@ -27,7 +27,9 @@ import {
   Zap,
   ClipboardList,
   Truck, 
-  Repeat
+  Repeat,
+  ChevronRight, 
+  MapPin
 } from "lucide-react";
 
 export default function Home() {
@@ -38,6 +40,7 @@ export default function Home() {
     { href: "#machines", label: "Machines" },
     { href: "#premix", label: "Premix" },
     { href: "#plans", label: "Plans" },
+    { href: "#how-it-works", label: "How It Works" },
     { href: "#contact", label: "Contact" }
   ];
 
@@ -96,7 +99,7 @@ export default function Home() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium hover:text-red-500 transition-colors relative group"
+                  className="text-base font-medium hover:text-red-500 transition-colors relative group"
                 >
                   {link.label}
                   <motion.span 
@@ -160,7 +163,7 @@ export default function Home() {
                     <motion.a
                       key={link.href}
                       href={link.href}
-                      className="px-4 py-3 text-white hover:text-red-500 hover:bg-white/5 transition-colors"
+                      className="px-4 py-3 text-lg text-white hover:text-red-500 hover:bg-white/5 transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                       initial={{ x: -20, opacity: 0 }}
                       animate={{
@@ -185,7 +188,7 @@ export default function Home() {
       </nav>
 
    {/* Hero Section */}
-<section className="relative py-12 md:py-24 overflow-hidden bg-gray-950">
+<section className="relative py-12 md:py-24 overflow-hidden bg-black">
   {/* Container with flex layout */}
   <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
     {/* Text content - left side */}
@@ -196,13 +199,21 @@ export default function Home() {
         Nestlé coffee for your workplace with our hassle-free service.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
-          Get Your Free Machine
-        </Button>
-        <Button size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600/20 hover:text-white font-medium">
-          View Plans
-        </Button>
-      </div>
+  <Button
+    size="lg"
+    className="bg-red-600 hover:bg-red-700 text-white rounded-full py-3 px-6 flex items-center justify-center"
+  >
+    Claim Your Free Machine
+    <span className="ml-2">→</span>
+  </Button>
+  <Button
+    size="lg"
+    variant="outline"
+    className="bg-black border-2 border-red-600 text-red-600 hover:bg-black hover:text-white font-medium rounded-full py-3 px-6"
+  >
+    View Plans
+  </Button>
+</div>
     </div>
 
     {/* Image - right side on desktop, hidden on mobile */}
@@ -677,7 +688,7 @@ export default function Home() {
 </section>
 
       {/* How It Works Section - Updated Version */}
-<section className="py-16 md:py-24 bg-black">
+<section id="how-it-works" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">How It Works</h2>
@@ -1037,78 +1048,144 @@ export default function Home() {
 </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-950 border-t border-gray-800">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Coffee className="h-6 w-6 text-red-500" />
-                <span className="text-xl font-bold">Ceylon Cafe Vending</span>
-              </div>
-              <p className="text-gray-300 mb-4">Premium coffee vending solutions for businesses across Sri Lanka.</p>
-            </div>
+<footer className="bg-zinc-900 text-white border-t border-red-600/30 py-8">
+  <div className="container mx-auto px-4">
+    {/* Top section with logo and social links */}
+    <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+      <div className="flex items-center space-x-2 mb-6 md:mb-0">
+        <Coffee className="h-8 w-8 text-red-600" />
+        <span className="text-2xl font-bold">Ceylon Cafe Vending</span>
+      </div>
 
-            <div>
-              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#benefits" className="text-gray-300 hover:text-red-500 transition-colors">
-                    Benefits
-                  </a>
-                </li>
-                <li>
-                  <a href="#machines" className="text-gray-300 hover:text-red-500 transition-colors">
-                    Machines
-                  </a>
-                </li>
-                <li>
-                  <a href="#premix" className="text-gray-300 hover:text-red-500 transition-colors">
-                    Premix
-                  </a>
-                </li>
-                <li>
-                  <a href="#plans" className="text-gray-300 hover:text-red-500 transition-colors">
-                    Plans
-                  </a>
-                </li>
-              </ul>
-            </div>
+      <div className="flex space-x-6">
+        <a href="#" className="bg-zinc-800 hover:bg-red-600 p-3 rounded-full transition-colors duration-300">
+          <Facebook className="h-5 w-5" />
+          <span className="sr-only">Facebook</span>
+        </a>
+        <a href="#" className="bg-zinc-800 hover:bg-red-600 p-3 rounded-full transition-colors duration-300">
+          <Instagram className="h-5 w-5" />
+          <span className="sr-only">Instagram</span>
+        </a>
+        <a href="#" className="bg-zinc-800 hover:bg-red-600 p-3 rounded-full transition-colors duration-300">
+          <Linkedin className="h-5 w-5" />
+          <span className="sr-only">LinkedIn</span>
+        </a>
+      </div>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-red-500" />
-                  <span className="text-gray-300">072 3333 015</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-red-500" />
-                  <span className="text-gray-300">ceyloncafevending@gmail.com</span>
-                </li>
-              </ul>
-            </div>
+    {/* Main footer content */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h3 className="font-bold text-lg mb-3 text-white relative inline-block">
+          About Us
+          <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-600"></span>
+        </h3>
+        <p className="text-zinc-400 mb-3">
+          Ceylon Cafe Vending provides premium coffee solutions for businesses of all sizes. We offer free coffee
+          machines with our subscription plans, ensuring your workplace always has access to quality beverages.
+        </p>
+        <p className="text-zinc-400">
+          Our mission is to elevate workplace experiences through exceptional coffee services with no upfront
+          costs.
+        </p>
+      </div>
 
-            <div>
-              <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
-                  <Facebook className="h-6 w-6" />
+      <div>
+        <h3 className="font-bold text-lg mb-3 text-white relative inline-block">
+          Quick Links
+          <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-600"></span>
+        </h3>
+        <div className="grid grid-cols-2">
+          <div>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#benefits"
+                  className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                >
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  Benefits
                 </a>
-                <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
-                  <Instagram className="h-6 w-6" />
+              </li>
+              <li>
+                <a
+                  href="#machines"
+                  className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                >
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  Machines
                 </a>
-                <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
-                  <Linkedin className="h-6 w-6" />
+              </li>
+              <li>
+                <a
+                  href="#premix"
+                  className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                >
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  Products
                 </a>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p className="text-gray-300">&copy; {new Date().getFullYear()} Ceylon Cafe Vending. All rights reserved.</p>
+          <div>
+            <ul className="space-y-2">
+              <li>
+                <a href="#plans" className="text-zinc-400 hover:text-red-500 transition-colors flex items-center">
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  Plans
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                >
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                >
+                  <ChevronRight className="h-4 w-4 mr-1 text-red-600" />
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
+      </div>
+
+      <div>
+        <h3 className="font-bold text-lg mb-3 text-white relative inline-block">
+          Contact Us
+          <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-600"></span>
+        </h3>
+        <ul className="space-y-2">
+          <li className="flex items-start">
+            <Mail className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+            <span className="text-zinc-400">ceyloncafevending@gmail.com</span>
+          </li>
+          <li className="flex items-start">
+            <Phone className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+            <span className="text-zinc-400">072 3333 015</span>
+          </li>
+          <li className="flex items-start">
+            <MapPin className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+            <span className="text-zinc-400">No 28 Ramakrishna Road, Wellawatte, Colombo 06</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="border-t border-zinc-800 mt-8 pt-6 text-center text-zinc-500 text-sm">
+      <p>© {new Date().getFullYear()} Ceylon Cafe Vending. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
     </div>
   )
 }
