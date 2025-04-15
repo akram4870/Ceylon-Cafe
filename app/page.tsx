@@ -300,7 +300,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <Card className="bg-black border border-gray-800 transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+          <Card className="bg-black border border-red-600/30 transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
             <CardHeader className="pb-2">
               <motion.div 
                 className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center mb-4"
@@ -332,7 +332,7 @@ export default function Home() {
     </div>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      <Card className="bg-black border border-gray-800 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
         <div className="aspect-square relative bg-black">
           <Image
             src="/images/spectra.png"
@@ -365,7 +365,7 @@ export default function Home() {
         </CardFooter>
       </Card>
       
-      <Card className="bg-black border border-gray-800 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
         <div className="aspect-square relative bg-black">
           <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
         </div>
@@ -406,7 +406,7 @@ export default function Home() {
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image 
             src="/images/nescafe.png" 
@@ -434,7 +434,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/nestea.png" alt="Nestea Premix" fill className="object-cover p-0" />
         </div>
@@ -457,7 +457,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/cardamon-tea.png" alt="Cardamon Tea" fill className="object-cover p-0" />
         </div>
@@ -480,7 +480,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/milo1.png" alt="Milo Premix" fill className="object-cover p-0" />
         </div>
@@ -503,7 +503,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/nesto1.png" alt="Nestomalt" fill className="object-cover p-0" />
         </div>
@@ -822,7 +822,7 @@ export default function Home() {
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+      <Card className="bg-black border border-red-600/30 hover:border-red-600 transition-colors duration-300">
         <CardContent className="pt-6">
           <div className="mb-4">
             {Array(5)
@@ -843,7 +843,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+      <Card className="bg-black border border-red-600/30 hover:border-red-600 transition-colors duration-300">
         <CardContent className="pt-6">
           <div className="mb-4">
             {Array(5)
@@ -864,7 +864,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+      <Card className="bg-black border border-red-600/30 hover:border-red-600 transition-colors duration-300">
         <CardContent className="pt-6">
           <div className="mb-4">
             {Array(5)
