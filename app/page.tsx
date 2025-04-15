@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,11 +53,11 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-red-500" />
-              <span>072 3333 015</span>
+              <span className="text-base">072 3333 015</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-red-500" />
-              <span>ceyloncafevending@gmail.com</span>
+              <span className="text-base">ceyloncafevending@gmail.com</span>
             </div>
           </div>
           <div className="flex gap-4">
@@ -78,15 +79,17 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
-            <motion.div 
-              className="flex items-center gap-2"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Coffee className="h-6 w-6 text-red-500" />
-              <span className="text-xl font-bold">Ceylon Cafe Vending</span>
-            </motion.div>
+            <Link href="/" className="flex items-center gap-2">
+              <motion.div 
+                className="flex items-center gap-2"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Coffee className="h-6 w-6 text-red-500" />
+                <span className="text-xl font-bold">Ceylon Cafe Vending</span>
+              </motion.div>
+            </Link>
 
             {/* Desktop Navigation */}
             <motion.div 
@@ -199,21 +202,26 @@ export default function Home() {
         Nestlé coffee for your workplace with our hassle-free service.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-  <Button
-    size="lg"
-    className="bg-red-600 hover:bg-red-700 text-white rounded-full py-3 px-6 flex items-center justify-center"
-  >
-    Claim Your Free Machine
-    <span className="ml-2">→</span>
-  </Button>
-  <Button
-    size="lg"
-    variant="outline"
-    className="bg-black border-2 border-red-600 text-red-600 hover:bg-black hover:text-white font-medium rounded-full py-3 px-6"
-  >
-    View Plans
-  </Button>
-</div>
+        <a href="#contact">
+          <Button
+            size="lg"
+            className="bg-red-600 hover:bg-red-700 text-white rounded-full py-3 px-6 flex items-center justify-center"
+          >
+            Claim Your Free Machine
+            <span className="ml-2">→</span>
+          </Button>
+        </a>
+
+        <a href="#plans">
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-black border-2 border-red-600 text-red-600 hover:bg-black hover:text-white font-medium rounded-full py-3 px-6"
+          >
+            View Plans
+          </Button>
+        </a>
+      </div>
     </div>
 
     {/* Image - right side on desktop, hidden on mobile */}
@@ -235,6 +243,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
       {/* Benefits Section */}
 <section id="benefits" className="py-16 md:py-24 bg-black">
@@ -361,7 +370,9 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+          <a href="#contact" className="w-full">
+            <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+          </a>
         </CardFooter>
       </Card>
       
@@ -389,12 +400,15 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+          <a href="#contact" className="w-full">
+            <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+          </a>
         </CardFooter>
       </Card>
     </div>
   </div>
 </section>
+
 {/* Premix Section */}
 <section id="premix" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
@@ -593,8 +607,16 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">Get Started</Button>
-        </CardFooter>
+  <a href="#contact" className="w-full">
+    <Button
+      className="w-full bg-transparent border border-red-600/40 hover:border-red-600 text-white hover:text-white"
+    >
+      Get Started
+    </Button>
+  </a>
+</CardFooter>
+
+
       </Card>
 
       {/* SME Solution - Highlighted */}
@@ -636,8 +658,13 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-red-600 hover:bg-red-700">Most Popular</Button>
-        </CardFooter>
+  <a href="#contact" className="w-full">
+    <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+      Most Popular
+    </Button>
+  </a>
+</CardFooter>
+
       </Card>
 
       {/* Heavy Factory/Industrial */}
@@ -680,8 +707,16 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">Enterprise Solution</Button>
-        </CardFooter>
+  <a href="#contact" className="w-full">
+    <Button
+      className="w-full bg-transparent border border-red-600/40 hover:border-red-600 text-white hover:text-white"
+    >
+      Enterprise Solution
+    </Button>
+  </a>
+</CardFooter>
+
+
       </Card>
     </div>
   </div>
