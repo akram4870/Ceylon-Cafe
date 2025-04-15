@@ -290,7 +290,7 @@ export default function Home() {
         {
           icon: <Zap className="h-6 w-6 text-red-500" />,
           title: "Flexible Plans",
-          description: "Subscription options to fit businesses of all sizes."
+          description: "Scalable subscriptions to fit businesses of any size perfectly."
         }
       ].map((benefit, index) => (
         <motion.div
@@ -300,10 +300,10 @@ export default function Home() {
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <Card className="bg-gray-900 border border-red-600/30 transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+          <Card className="bg-black border border-gray-800 transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
             <CardHeader className="pb-2">
               <motion.div 
-                className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4"
+                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center mb-4"
                 whileHover={{ scale: 1.05 }}
               >
                 {benefit.icon}
@@ -321,10 +321,10 @@ export default function Home() {
 </section>
 
       {/* Machines Section */}
-<section id="machines" className="py-16 md:py-24 bg-gray-950">
+<section id="machines" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">Premium Coffee Machines</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Premium Coffee Machines</h2>
       <p className="text-xl text-gray-300 max-w-3xl mx-auto">
         Choose from our selection of high-quality vending machines, all available at no upfront cost with our
         subscription plans.
@@ -332,7 +332,7 @@ export default function Home() {
     </div>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+      <Card className="bg-black border border-gray-800 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
         <div className="aspect-square relative bg-black">
           <Image
             src="/images/spectra.png"
@@ -345,7 +345,7 @@ export default function Home() {
           <CardTitle className="text-white">Spectra Double Option</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 text-white">
+          <ul className="space-y-2 text-gray-300">
             <li className="flex items-center gap-2">
               <Check className="h-5 w-5 text-red-500" />
               <span>Double beverage options</span>
@@ -365,7 +365,7 @@ export default function Home() {
         </CardFooter>
       </Card>
       
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+      <Card className="bg-black border border-gray-800 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
         <div className="aspect-square relative bg-black">
           <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
         </div>
@@ -373,7 +373,7 @@ export default function Home() {
           <CardTitle className="text-white">Multi Option Machine</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 text-white">
+          <ul className="space-y-2 text-gray-300">
             <li className="flex items-center gap-2">
               <Check className="h-5 w-5 text-red-500" />
               <span>4 Beverage options</span>
@@ -406,8 +406,8 @@ export default function Home() {
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
-        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image 
             src="/images/nescafe.png" 
             alt="Nescafe Premix" 
@@ -418,7 +418,7 @@ export default function Home() {
         <CardHeader className="pb-2 border-t border-gray-800">
           <div className="flex justify-between items-start">
             <CardTitle className="text-white text-xl">Nescafe Premix</CardTitle>
-            <Badge className="bg-red-600 text-white font-bold ">Best</Badge>
+            <Badge className="bg-red-600 text-white font-bold">Best</Badge>
           </div>
           <CardDescription className="text-gray-300">Premium coffee premix</CardDescription>
         </CardHeader>
@@ -427,15 +427,15 @@ export default function Home() {
             <span className="text-gray-300">1kg</span>
             <span className="font-bold text-2xl text-red-500">Rs 2600</span>
           </div>
-          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">50 Cups</span>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
-        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/nestea.png" alt="Nestea Premix" fill className="object-cover p-0" />
         </div>
         <CardHeader className="pb-2 border-t border-gray-800">
@@ -450,15 +450,15 @@ export default function Home() {
             <span className="text-gray-300">1kg</span>
             <span className="font-bold text-2xl text-red-500">Rs 2600</span>
           </div>
-          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">50 Cups</span>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
-        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/cardamon-tea.png" alt="Cardamon Tea" fill className="object-cover p-0" />
         </div>
         <CardHeader className="pb-2 border-t border-gray-800">
@@ -473,15 +473,15 @@ export default function Home() {
             <span className="text-gray-300">1kg</span>
             <span className="font-bold text-2xl text-red-500">Rs 3470</span>
           </div>
-          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">50 Cups</span>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
-        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/milo1.png" alt="Milo Premix" fill className="object-cover p-0" />
         </div>
         <CardHeader className="pb-2 border-t border-gray-800">
@@ -496,15 +496,15 @@ export default function Home() {
             <span className="text-gray-300">800g</span>
             <span className="font-bold text-2xl text-red-500">Rs 2690</span>
           </div>
-          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">30 Cups</span>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
-        <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
+      <Card className="bg-black border border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
+        <div className="aspect-square relative bg-black p-6 flex items-center justify-center">
           <Image src="/images/nesto1.png" alt="Nestomalt" fill className="object-cover p-0" />
         </div>
         <CardHeader className="pb-2 border-t border-gray-800">
@@ -519,7 +519,7 @@ export default function Home() {
             <span className="text-gray-300">800g</span>
             <span className="font-bold text-2xl text-red-500">Rs 2100</span>
           </div>
-          <div className="flex justify-between bg-gray-800/50 p-2 rounded-md items-center">
+          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">30 Cups</span>
           </div>
@@ -527,8 +527,8 @@ export default function Home() {
       </Card>
     </div>
 
-    <div className="mt-12 bg-gray-900 rounded-lg overflow-hidden">
-      <div className="p-6 border-l-4 border-red-600 bg-gradient-to-r from-gray-900 to-gray-800">
+    <div className="mt-12 bg-black rounded-lg overflow-hidden border border-gray-800">
+      <div className="p-6 border-l-4 border-red-600 bg-gradient-to-r from-black to-gray-900">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center mb-4 md:mb-0">
             <div className="mr-4 bg-red-600/20 p-3 rounded-full">
@@ -551,10 +551,10 @@ export default function Home() {
 </section>
 
       {/* Plans Section */}
-<section id="plans" className="py-16 md:py-24 bg-gray-950">
+<section id="plans" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">Flexible Subscription Plans</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Flexible Subscription Plans</h2>
       <p className="text-xl text-gray-300 max-w-3xl mx-auto">
         Choose the perfect plan for your business needs. All plans include free machines and maintenance.
       </p>
@@ -562,14 +562,14 @@ export default function Home() {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-8xl mx-auto">
       {/* Starter Plan */}
-      <Card className="bg-gray-900 border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
+      <Card className="bg-black border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
         <CardHeader>
           <CardTitle className="text-white">Starter Plan</CardTitle>
           <CardDescription className="text-gray-300">Perfect for small offices and startups</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow">
           <div className="text-2xl font-bold text-white mb-4">40 packets/month</div>
-          <ul className="space-y-3 text-white">
+          <ul className="space-y-3 text-gray-300">
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>Free machine with Rs. 25,000 Refundable deposit</span>
@@ -593,12 +593,12 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-gray-800 hover:bg-gray-700">Get Started</Button>
+          <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">Get Started</Button>
         </CardFooter>
       </Card>
 
       {/* SME Solution - Highlighted */}
-      <Card className="bg-gray-900 border-red-600 flex flex-col relative">
+      <Card className="bg-black border-red-600 flex flex-col relative">
         <div className="absolute top-0 right-0 left-0">
           <div className="bg-red-600 text-white text-center py-1 text-sm font-medium">POPULAR</div>
         </div>
@@ -608,7 +608,7 @@ export default function Home() {
         </CardHeader>
         <CardContent className="flex-grow">
           <div className="text-2xl font-bold text-white mb-4">60-100 packets/month</div>
-          <ul className="space-y-3 text-white">
+          <ul className="space-y-3 text-gray-300">
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>FREE coffee machine</span>
@@ -641,14 +641,14 @@ export default function Home() {
       </Card>
 
       {/* Heavy Factory/Industrial */}
-      <Card className="bg-gray-900 border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
+      <Card className="bg-black border-gray-800 flex flex-col hover:border-red-600 transition-colors duration-300">
         <CardHeader>
           <CardTitle className="text-white">Heavy Factory/Industrial Solution</CardTitle>
           <CardDescription className="text-gray-300">For large organizations with high demand</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow">
           <div className="text-2xl font-bold text-white mb-4">100+ packets/month</div>
-          <ul className="space-y-3 text-white">
+          <ul className="space-y-3 text-gray-300">
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>FREE additional coffee machines based on demand</span>
@@ -680,13 +680,12 @@ export default function Home() {
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-gray-800 hover:bg-gray-700">Enterprise Solution</Button>
+          <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">Enterprise Solution</Button>
         </CardFooter>
       </Card>
     </div>
   </div>
 </section>
-
       {/* How It Works Section - Updated Version */}
 <section id="how-it-works" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
@@ -812,82 +811,82 @@ export default function Home() {
   </div>
 </section>
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-gray-950">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what businesses across Sri Lanka are saying about our coffee
-              vending solutions.
-            </p>
+<section className="py-16 md:py-24 bg-black">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">What Our Clients Say</h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Don't just take our word for it. Here's what businesses across Sri Lanka are saying about our coffee
+        vending solutions.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+        <CardContent className="pt-6">
+          <div className="mb-4">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
+              ))}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-gray-900 border-gray-800">
-              <CardContent className="pt-6">
-                <div className="mb-4">
-                  {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                      <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
-                    ))}
-                </div>
-                <p className="mb-6 text-gray-300">
-                  "Ceylon Cafe Vending has transformed our office coffee experience. The machine is top quality, and our
-                  team loves the premium Nestlé coffee options. The free machine with subscription model saved us a
-                  significant upfront investment."
-                </p>
-                <div>
-                  <p className="font-semibold text-white">Samantha Perera</p>
-                  <p className="text-sm text-gray-400">Office Manager, TechLanka</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardContent className="pt-6">
-                <div className="mb-4">
-                  {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                      <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
-                    ))}
-                </div>
-                <p className="mb-6 text-gray-300">
-                  "We have multiple Ceylon Cafe Vending machines across our factory floor. The Industrial plan perfectly
-                  suits our high-volume needs, and their service team ensures we never run out of coffee. Highly
-                  recommend for large businesses!"
-                </p>
-                <div>
-                  <p className="font-semibold text-white">Rajiv Fernando</p>
-                  <p className="text-sm text-gray-400">Factory Director, Apparels International</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800">
-              <CardContent className="pt-6">
-                <div className="mb-4">
-                  {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                      <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
-                    ))}
-                </div>
-                <p className="mb-6 text-gray-300">
-                  "As a coworking space, offering quality coffee is essential. Ceylon Cafe Vending provided us with an
-                  excellent machine and regular refills. Our members are delighted with the premium coffee options
-                  available."
-                </p>
-                <div>
-                  <p className="font-semibold text-white">Nisha Jayawardena</p>
-                  <p className="text-sm text-gray-400">CEO, StartHub Coworking</p>
-                </div>
-              </CardContent>
-            </Card>
+          <p className="mb-6 text-gray-300">
+            "Ceylon Cafe Vending has transformed our office coffee experience. The machine is top quality, and our
+            team loves the premium Nestlé coffee options. The free machine with subscription model saved us a
+            significant upfront investment."
+          </p>
+          <div>
+            <p className="font-semibold text-white">Samantha Perera</p>
+            <p className="text-sm text-gray-400">Office Manager, TechLanka</p>
           </div>
-        </div>
-      </section>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+        <CardContent className="pt-6">
+          <div className="mb-4">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
+              ))}
+          </div>
+          <p className="mb-6 text-gray-300">
+            "We have multiple Ceylon Cafe Vending machines across our factory floor. The Industrial plan perfectly
+            suits our high-volume needs, and their service team ensures we never run out of coffee. Highly
+            recommend for large businesses!"
+          </p>
+          <div>
+            <p className="font-semibold text-white">Rajiv Fernando</p>
+            <p className="text-sm text-gray-400">Factory Director, Apparels International</p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-black border-gray-800 hover:border-red-600 transition-colors duration-300">
+        <CardContent className="pt-6">
+          <div className="mb-4">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <Star key={i} className="inline-block h-5 w-5 text-yellow-500 fill-yellow-500" />
+              ))}
+          </div>
+          <p className="mb-6 text-gray-300">
+            "As a coworking space, offering quality coffee is essential. Ceylon Cafe Vending provided us with an
+            excellent machine and regular refills. Our members are delighted with the premium coffee options
+            available."
+          </p>
+          <div>
+            <p className="font-semibold text-white">Nisha Jayawardena</p>
+            <p className="text-sm text-gray-400">CEO, StartHub Coworking</p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
 
       {/* Contact Form Section */}
 <section id="contact" className="py-16 md:py-24 bg-black">
