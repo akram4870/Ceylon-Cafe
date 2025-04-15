@@ -286,7 +286,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <Card className="bg-gray-900 border border-red-600 md:border-gray-800 transition-all duration-300 md:hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+          <Card className="bg-gray-900 border border-red-600/30 transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
             <CardHeader className="pb-2">
               <motion.div 
                 className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-4"
@@ -307,82 +307,81 @@ export default function Home() {
 </section>
 
       {/* Machines Section */}
-      <section id="machines" className="py-16 md:py-24 bg-gray-950">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Premium Coffee Machines</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose from our selection of high-quality vending machines, all available at no upfront cost with our
-              subscription plans.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image
-                  src="/images/spectra.png"
-                  alt="Spectra Double Option Coffee Machine"
-                  fill
-                  className="object-cover p-0"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-white">Spectra Double Option</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-white">
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>Double beverage options</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>Hot Water</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>6 cups/per minute</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden">
-              <div className="aspect-square relative bg-black">
-                <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-white">Multi Option Machine</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-white">
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>4 Beverage options</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>Hot Water</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-red-500" />
-                    <span>6 cups/per minute</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
-              </CardFooter>
-            </Card>
-          </div>
+<section id="machines" className="py-16 md:py-24 bg-gray-950">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Premium Coffee Machines</h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Choose from our selection of high-quality vending machines, all available at no upfront cost with our
+        subscription plans.
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+        <div className="aspect-square relative bg-black">
+          <Image
+            src="/images/spectra.png"
+            alt="Spectra Double Option Coffee Machine"
+            fill
+            className="object-cover p-0"
+          />
         </div>
-      </section>
-
-      {/* Premix Section */}
+        <CardHeader>
+          <CardTitle className="text-white">Spectra Double Option</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 text-white">
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>Double beverage options</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>Hot Water</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>6 cups/per minute</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+        </CardFooter>
+      </Card>
+      
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+        <div className="aspect-square relative bg-black">
+          <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
+        </div>
+        <CardHeader>
+          <CardTitle className="text-white">Multi Option Machine</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 text-white">
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>4 Beverage options</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>Hot Water</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-red-500" />
+              <span>6 cups/per minute</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+        </CardFooter>
+      </Card>
+    </div>
+  </div>
+</section>
+{/* Premix Section */}
 <section id="premix" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
@@ -393,7 +392,7 @@ export default function Home() {
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
           <Image 
             src="/images/nescafe.png" 
@@ -421,7 +420,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
           <Image src="/images/nestea.png" alt="Nestea Premix" fill className="object-cover p-0" />
         </div>
@@ -444,7 +443,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
           <Image src="/images/cardamon-tea.png" alt="Cardamon Tea" fill className="object-cover p-0" />
         </div>
@@ -467,7 +466,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
           <Image src="/images/milo1.png" alt="Milo Premix" fill className="object-cover p-0" />
         </div>
@@ -490,7 +489,7 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border-gray-800 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20">
+      <Card className="bg-gray-900 border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
         <div className="aspect-square relative bg-gray-900 p-6 flex items-center justify-center">
           <Image src="/images/nesto1.png" alt="Nestomalt" fill className="object-cover p-0" />
         </div>
