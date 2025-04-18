@@ -196,7 +196,9 @@ export default function Home() {
   <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
     {/* Text content - left side */}
     <div className="w-full md:w-1/2 relative z-10">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">FREE Coffee Machines for Your Business</h1>
+      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+        <span className="text-red-500">FREE</span> Coffee Machines for Your Business
+      </h1>
       <p className="text-xl md:text-2xl mb-8 text-gray-300">
         Ceylon Cafe Vending offers subscription-based coffee vending solutions with no upfront costs. Get premium
         Nestlé coffee for your workplace with our hassle-free service.
@@ -329,7 +331,7 @@ export default function Home() {
   </div>
 </section>
 
-      {/* Machines Section */}
+     {/* Machines Section */}
 <section id="machines" className="py-16 md:py-24 bg-black">
   <div className="container mx-auto px-4 md:px-6">
     <div className="text-center mb-12">
@@ -340,62 +342,123 @@ export default function Home() {
       </p>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {/* Spectra Double Option */}
+<Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+  <div className="aspect-square relative bg-black">
+    <Image
+      src="/images/spectra.png"
+      alt="Spectra Double Option Coffee Machine"
+      fill
+      className="object-cover p-0"
+    />
+  </div>
+  <CardHeader>
+    <CardTitle className="text-white">Spectra Double Option</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <ul className="space-y-2 text-gray-300">
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>Double beverage options</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+        <div>
+          <span className="text-gray-300">Includes: </span>
+          <span className="text-gray-400">
+            Nescafe, Nestea, Cardamon Tea, Milo, Nestomalt
+          </span>
+        </div>
+      </li>
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>Hot Water</span>
+      </li>
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>6 cups/per minute</span>
+      </li>
+    </ul>
+  </CardContent>
+  <CardFooter>
+    <a href="#contact" className="w-full">
+      <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+    </a>
+  </CardFooter>
+</Card>
+
+{/* Multi Option Machine */}
+<Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
+  <div className="aspect-square relative bg-black">
+    <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
+  </div>
+  <CardHeader>
+    <CardTitle className="text-white">Multi Option Machine</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <ul className="space-y-2 text-gray-300">
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>4 Beverage options</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+        <div>
+          <span className="text-gray-300">Includes: </span>
+          <span className="text-gray-400">
+            Nescafe, Nestea, Cardamon Tea, Milo, Nestomalt
+          </span>
+        </div>
+      </li>
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>Hot Water</span>
+      </li>
+      <li className="flex items-center gap-2">
+        <Check className="h-5 w-5 text-red-500" />
+        <span>6 cups/per minute</span>
+      </li>
+    </ul>
+  </CardContent>
+  <CardFooter>
+    <a href="#contact" className="w-full">
+      <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
+    </a>
+  </CardFooter>
+</Card>
+
+      {/* Blackdoor Premium Machine */}
       <Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
         <div className="aspect-square relative bg-black">
-          <Image
-            src="/images/spectra.png"
-            alt="Spectra Double Option Coffee Machine"
-            fill
+          <Image 
+            src="/images/rrr.svg" 
+            alt="Blackdoor Premium Coffee Machine" 
+            fill 
             className="object-cover p-0"
           />
         </div>
         <CardHeader>
-          <CardTitle className="text-white">Spectra Double Option</CardTitle>
+          <CardTitle className="text-white">Blackdoor Premium Machine</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 text-gray-300">
             <li className="flex items-center gap-2">
               <Check className="h-5 w-5 text-red-500" />
-              <span>Double beverage options</span>
+              <span> Multi Premium beverage options</span>
             </li>
+            <li className="flex items-start gap-2">
+  <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+  <div className="text-gray-300">
+    <span className="font-medium">Includes: </span>
+    <span className="text-gray-400">
+      Cappuccino, Latte, Hot Chocolate, Americano, Cardamon Tea, Mocha
+    </span>
+  </div>
+</li>
             <li className="flex items-center gap-2">
               <Check className="h-5 w-5 text-red-500" />
               <span>Hot Water</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Check className="h-5 w-5 text-red-500" />
-              <span>6 cups/per minute</span>
-            </li>
-          </ul>
-        </CardContent>
-        <CardFooter>
-          <a href="#contact" className="w-full">
-            <Button className="w-full bg-red-600 hover:bg-red-700">Get This Machine</Button>
-          </a>
-        </CardFooter>
-      </Card>
-      
-      <Card className="bg-black border border-red-600/30 overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20">
-        <div className="aspect-square relative bg-black">
-          <Image src="/images/multi.png" alt="Multi Option Coffee Machine" fill className="object-cover p-0" />
-        </div>
-        <CardHeader>
-          <CardTitle className="text-white">Multi Option Machine</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-gray-300">
-            <li className="flex items-center gap-2">
-              <Check className="h-5 w-5 text-red-500" />
-              <span>4 Beverage options</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Check className="h-5 w-5 text-red-500" />
-              <span>Hot Water</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Check className="h-5 w-5 text-red-500" />
-              <span>6 cups/per minute</span>
             </li>
           </ul>
         </CardContent>
@@ -590,7 +653,7 @@ export default function Home() {
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-              <span>Monthly commitment: 40 packets/month</span>
+              <span>Monthly commitment: 40 packets/month (2000 cups/month)</span>
             </li>
             <li className="flex items-start gap-2">
               <Check className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -990,6 +1053,19 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* NEW LOCATION FIELD */}
+              <div className="space-y-2">
+                <Label htmlFor="location" className="text-white">
+                  Business Location
+                </Label>
+                <Input
+                  id="location"
+                  className="bg-zinc-800 border-zinc-700 text-white focus:border-red-600"
+                  placeholder="e.g., Colombo, Kandy, Galle"
+                  required
+                />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="employees" className="text-white">
@@ -1014,7 +1090,7 @@ export default function Home() {
                   <Input 
                     id="cups" 
                     className="bg-zinc-800 border-zinc-700 text-white focus:border-red-600" 
-                    placeholder="e.g. 500"
+                    placeholder="e.g. 2000"
                     type="number"
                     required
                   />
