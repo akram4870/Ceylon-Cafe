@@ -5,16 +5,21 @@ import { NextRequest, NextResponse } from 'next/server';
 // Function to initialize and authenticate with the Google Sheet
 async function getSpreadsheet() {
   try {
-    // Create JWT client using service account credentials
+    // Create JWT client using service account credentials (updated approach)
     const serviceAccountAuth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
       key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'), // Fix escaped newlines
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+      scopes: [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive.file'
+      ],
     });
 
-    // Initialize the sheet
+    // Initialize the sheet with authentication
     const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID!, serviceAccountAuth);
-    await doc.loadInfo(); // Load document properties and worksheets
+    
+    // Load document properties and worksheets
+    await doc.loadInfo();
     return doc;
   } catch (error) {
     console.error('Error initializing spreadsheet:', error);
@@ -83,17 +88,15 @@ export async function POST(request: NextRequest) {
     
     console.log('Row added to sheet:', newRow);
     
-    // Always return proper JSON response
     return NextResponse.json({ success: true, message: 'Form submitted successfully' });
   } catch (error) {
     console.error('Error submitting form:', error);
     
-    // Make sure we return a proper JSON response even in case of errors
     return NextResponse.json(
       { 
         success: false, 
         message: error instanceof Error ? error.message : 'Failed to submit form',
-        errorDetails: JSON.stringify(error)
+        errorDetails: process.env.NODE_ENV === 'development' ? JSON.stringify(error) : undefined
       },
       { status: 500 }
     );
