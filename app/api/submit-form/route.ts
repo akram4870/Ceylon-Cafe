@@ -2,28 +2,38 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 
-// Function to initialize and authenticate with the Google Sheet
 async function getSpreadsheet() {
   try {
-    // Create JWT client using service account credentials (updated approach)
-    const serviceAccountAuth = new JWT({
+    // Verify environment variables exist
+    if (!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || 
+        !process.env.GOOGLE_PRIVATE_KEY || 
+        !process.env.GOOGLE_SHEET_ID) {
+      throw new Error('Missing Google Sheets configuration');
+    }
+
+    // Create auth client
+    const auth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'), // Fix escaped newlines
+      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
       scopes: [
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive.file'
       ],
     });
 
-    // Initialize the sheet with authentication
-    const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID!, serviceAccountAuth);
-    
-    // Load document properties and worksheets
+    // Initialize spreadsheet
+    const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, auth);
     await doc.loadInfo();
     return doc;
+    
   } catch (error) {
-    console.error('Error initializing spreadsheet:', error);
-    throw error;
+    console.error('Auth Error Details:', {
+      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      keyPresent: !!process.env.GOOGLE_PRIVATE_KEY,
+      sheetId: process.env.GOOGLE_SHEET_ID,
+      error
+    });
+    throw new Error('Google Sheets authentication failed');
   }
 }
 
@@ -39,7 +49,7 @@ export async function POST(request: NextRequest) {
     const doc = await getSpreadsheet();
     console.log('Spreadsheet connected');
     
-    // Define the headers we'll use
+    // Define the headers
     const headers = [
       'Company Name',
       'Contact Person',
@@ -53,26 +63,26 @@ export async function POST(request: NextRequest) {
       'Submission Date'
     ];
     
-    // Look for the "Form Responses" sheet, or create it if it doesn't exist
+    // Get or create the sheet
     let sheet = doc.sheetsByTitle['Form Responses'];
     if (!sheet) {
-      console.log('Sheet "Form Responses" not found, creating it');
+      console.log('Creating new "Form Responses" sheet');
       sheet = await doc.addSheet({ 
         title: 'Form Responses',
         headerValues: headers 
       });
     } else {
-      console.log('Found existing "Form Responses" sheet');
+      console.log('Using existing "Form Responses" sheet');
       
-      // Check if the sheet has headers, if not add them
+      // Ensure headers exist
       const rows = await sheet.getRows();
       if (rows.length === 0 || !rows[0].get('Company Name')) {
-        console.log('Adding headers to sheet');
+        console.log('Adding missing headers');
         await sheet.setHeaderRow(headers);
       }
     }
     
-    // Add a new row to the sheet with the form data
+    // Add new row
     const newRow = await sheet.addRow({
       'Company Name': formData.company,
       'Contact Person': formData.contact,
@@ -86,17 +96,22 @@ export async function POST(request: NextRequest) {
       'Submission Date': new Date().toISOString(),
     });
     
-    console.log('Row added to sheet:', newRow);
+    console.log('Form submission successful');
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Form submitted successfully' 
+    });
     
-    return NextResponse.json({ success: true, message: 'Form submitted successfully' });
   } catch (error) {
-    console.error('Error submitting form:', error);
-    
+    console.error('Form submission error:', error);
     return NextResponse.json(
       { 
         success: false, 
-        message: error instanceof Error ? error.message : 'Failed to submit form',
-        errorDetails: process.env.NODE_ENV === 'development' ? JSON.stringify(error) : undefined
+        message: 'Failed to submit form',
+        ...(process.env.NODE_ENV === 'development' && {
+          error: error instanceof Error ? error.message : 'Unknown error',
+          stack: error instanceof Error ? error.stack : undefined
+        })
       },
       { status: 500 }
     );
