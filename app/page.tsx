@@ -618,7 +618,7 @@ export default function Home() {
           </div>
           <div className="flex items-center">
             <span className="mr-3 text-gray-300">One bundle: </span>
-            <span className="text-xl font-bold text-white">Rs 260</span>
+            <span className="text-xl font-bold text-white">Rs 300</span>
             <span className="mx-2 text-gray-400">•</span>
             <span className="text-gray-300">Contains 55 Cups with Nescafe branding</span>
           </div>
