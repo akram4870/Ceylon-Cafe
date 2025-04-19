@@ -11,7 +11,11 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
-  description: 'Created with v0',
+  description: 'Premium Beverage Solutions',
+  keywords: 'vending, coffee, tea, beverage, solutions',
+  authors: [{ name: 'Ceylon Cafe Vending' }],
+  creator: 'Ceylon Cafe Vending',
+  publisher: 'Ceylon Cafe Vending',
   generator: 'v0.dev',
 }
 
