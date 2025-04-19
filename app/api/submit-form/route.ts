@@ -4,36 +4,37 @@ import { NextRequest, NextResponse } from 'next/server';
 
 async function getSpreadsheet() {
   try {
-    // Verify environment variables exist
+    // Verify all required environment variables exist
     if (!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || 
         !process.env.GOOGLE_PRIVATE_KEY || 
         !process.env.GOOGLE_SHEET_ID) {
       throw new Error('Missing Google Sheets configuration');
     }
 
-    // Create auth client
+    // Convert environment variable to proper key format
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY
+      .replace(/\\n/g, '\n')        // Convert escaped newlines
+      .replace(/"/g, '')            // Remove any quotes
+      .trim();                      // Remove whitespace
+
     const auth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      key: privateKey,
       scopes: [
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive.file'
       ],
     });
 
-    // Initialize spreadsheet
     const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, auth);
     await doc.loadInfo();
     return doc;
-    
   } catch (error) {
-    console.error('Auth Error Details:', {
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      keyPresent: !!process.env.GOOGLE_PRIVATE_KEY,
-      sheetId: process.env.GOOGLE_SHEET_ID,
-      error
+    console.error('Authentication Error:', {
+      error,
+      keySnippet: process.env.GOOGLE_PRIVATE_KEY?.substring(0, 50) + '...'
     });
-    throw new Error('Google Sheets authentication failed');
+    throw new Error('Failed to authenticate with Google Sheets');
   }
 }
 
