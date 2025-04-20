@@ -491,20 +491,28 @@ export default function Home() {
         <CardHeader className="pb-2 border-t border-gray-800">
           <div className="flex justify-between items-start">
             <CardTitle className="text-white text-xl">Nescafe Premix</CardTitle>
-            <Badge className="bg-red-600 text-white font-bold">Best</Badge>
+            <Badge className="bg-red-600 text-white font-bold text-center">Best Seller</Badge>
           </div>
           <CardDescription className="text-gray-300">Premium coffee premix</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex justify-between items-center py-1">
-            <span className="text-gray-300">1kg</span>
-            <span className="font-bold text-2xl text-red-500">Rs 2600</span>
-          </div>
-          <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
-            <span className="text-gray-300">Makes</span>
-            <span className="text-white font-medium">50 Cups</span>
-          </div>
-        </CardContent>
+          </CardHeader>
+<CardContent className="space-y-3">
+  <div className="flex justify-between items-center py-1">
+    <span className="text-gray-300">1kg</span>
+    <span className="font-bold text-2xl text-red-500">Rs 2600</span>
+  </div>
+
+  {/* New: Cost per cup in a separate div */}
+  <div className=" p-1 rounded-md">
+    <span className="text-gray-300">Cost per cup: </span>
+    <span className="text-red-500">Rs {(2600 / 50).toFixed(2)}</span>
+  </div>
+
+  {/* Original "Makes" div (unchanged) */}
+  <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
+    <span className="text-gray-300">Makes</span>
+    <span className="text-white font-medium">50 Cups</span>
+  </div>
+</CardContent>
       </Card>
 
       <Card className="bg-black border border-red-600/30 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:border-red-600 hover:shadow-lg hover:shadow-red-600/20">
@@ -523,6 +531,13 @@ export default function Home() {
             <span className="text-gray-300">1kg</span>
             <span className="font-bold text-2xl text-red-500">Rs 2600</span>
           </div>
+
+          {/* New: Cost per cup in a separate div */}
+  <div className=" p-1 rounded-md">
+    <span className="text-gray-300">Cost per cup: </span>
+    <span className="text-red-500">Rs {(2600 / 50).toFixed(2)}</span>
+  </div>
+
           <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">50 Cups</span>
@@ -546,6 +561,14 @@ export default function Home() {
             <span className="text-gray-300">1kg</span>
             <span className="font-bold text-2xl text-red-500">Rs 3470</span>
           </div>
+
+          {/* New: Cost per cup in a separate div */}
+  <div className=" p-1 rounded-md">
+    <span className="text-gray-300">Cost per cup: </span>
+    <span className="text-red-500">Rs {(3470 / 50).toFixed(2)}</span>
+  </div>
+
+
           <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">50 Cups</span>
@@ -569,6 +592,14 @@ export default function Home() {
             <span className="text-gray-300">800g</span>
             <span className="font-bold text-2xl text-red-500">Rs 2690</span>
           </div>
+
+          {/* New: Cost per cup in a separate div */}
+  <div className="p-1 rounded-md">
+    <span className="text-gray-300">Cost per cup: </span>
+    <span className="text-red-500">Rs {(2690 / 30).toFixed(2)}</span>
+  </div>
+
+
           <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">30 Cups</span>
@@ -592,6 +623,14 @@ export default function Home() {
             <span className="text-gray-300">800g</span>
             <span className="font-bold text-2xl text-red-500">Rs 2100</span>
           </div>
+
+          {/* New: Cost per cup in a separate div */}
+  <div className="p-1 rounded-md">
+    <span className="text-gray-300">Cost per cup: </span>
+    <span className="text-red-500">Rs {(2100 / 30).toFixed(2)}</span>
+  </div>
+
+
           <div className="flex justify-between bg-gray-900 p-2 rounded-md items-center">
             <span className="text-gray-300">Makes</span>
             <span className="text-white font-medium">30 Cups</span>
