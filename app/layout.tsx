@@ -1,5 +1,7 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
+import Script from 'next/script';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +22,12 @@ export const metadata: Metadata = {
     'free coffee machine',
     'office coffee',
     'NESCAFÉ solutions',
-    'Ceylon vending'
+    'Ceylon vending',
+    'Nescafe machine Sri Lanka',
+    'coffee machine Sri Lanka',
+    'office coffee solutions',
+    'coffee machine rental',
+    'Beverage solutions'
   ],
   authors: [{ 
     name: 'Ceylon Cafe Vending', 
@@ -58,10 +65,9 @@ export const metadata: Metadata = {
     description: 'Premium office coffee solutions',
     images: ['/twitter-image.jpg'],
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
-}
+};
+
+const GA_TRACKING_ID = 'G-7MNKBXEQ60';
 
 export default function RootLayout({
   children,
@@ -70,9 +76,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Tag Manager */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen bg-white">
         {children}
+        <Analytics /> {/* Vercel Analytics */}
       </body>
     </html>
-  )
+  );
 }
