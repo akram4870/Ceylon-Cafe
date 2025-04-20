@@ -9,11 +9,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
   Facebook,
   Instagram,
@@ -202,7 +197,7 @@ export default function Home() {
       </h1>
       <p className="text-xl md:text-2xl mb-8 text-gray-300">
         Ceylon Cafe Vending offers subscription-based coffee vending solutions with no upfront costs. Get premium
-        Nestlé coffee for your workplace with our hassle-free service.
+        coffee for your workplace with our hassle-free service.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <a href="#contact">
